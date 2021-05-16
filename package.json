@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/japankid-code/just-tech-news#readme",
   "dependencies": {
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
