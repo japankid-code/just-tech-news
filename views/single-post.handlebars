@@ -1,13 +1,4 @@
-<article class="post">
-  <div class="title">
-    <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-    <span>({{post.post_url}})</span>
-  </div>
-  <div>
-    {{post.vote_count}} point(s) by {{post.user.username}} on {{post.created_at}} | 
-    <a href="/post/{{post.id}}">{{posts.comments.length}}</a>
-  </div>
-</article>
+{{> post-info post }}
 
 {{#if loggedIn}}
 <form action="" class="comment-form">
@@ -21,18 +12,7 @@
 </form>
 {{/if}}
 
-<div class="comments">
-  {{#each post.comments}}
-  <section class="comment">
-    <div class="meta">
-      {{use.username}} on {{created_at}}
-    </div>
-    <div class="text">
-      {{comment_text}}
-    </div>
-  </section>
-  {{/each}}
-</div>
+{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src='/javascript/comment.js'></script>
