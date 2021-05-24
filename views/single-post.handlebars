@@ -1,0 +1,36 @@
+<article class="post">
+  <div class="title">
+    <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
+    <span>({{post.post_url}})</span>
+  </div>
+  <div>
+    {{post.vote_count}} point(s) by {{post.user.username}} on {{post.created_at}} | 
+    <a href="/post/{{post.id}}">{{posts.comments.length}}</a>
+  </div>
+</article>
+
+<form action="" class="comment-form">
+  <div>
+    <textarea name="comment-body" id="" cols="30" rows="10" class=""></textarea>
+  </div>
+  <div>
+    <button type="submit">add comment</button>
+    <button type="button" class="upvote-btn">upvote</button>
+  </div>
+</form>
+
+<div class="comments">
+  {{#each post.comments}}
+  <section class="comment">
+    <div class="meta">
+      {{use.username}} on {{created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+<script src='/javascript/comment.js'></script>
+<script src='/javascript/upvote.js'></script>
